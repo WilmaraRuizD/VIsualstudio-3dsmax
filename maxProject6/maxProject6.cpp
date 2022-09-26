@@ -1,78 +1,159 @@
-//**************************************************************************/
-// Copyright (c) 1998-2018 Autodesk, Inc.
-// All rights reserved.
-// 
-// Use of this software is subject to the terms of the Autodesk license 
-// agreement provided at the time of installation or download, or which 
-// otherwise accompanies this software in either electronic or hard copy form.
-//**************************************************************************/
-// DESCRIPTION: Appwizard generated plugin
-// AUTHOR: 
-//***************************************************************************/
-
 #include "maxProject6.h"
 
-#define SampleKFCtrl_CLASS_ID	Class_ID(0x4e58f6a2, 0x51ad0d9e)
+#define SampleKFCtrl_CLASS_ID	Class_ID(0x4c8a93d5, 0x8a5fca54)
 
 #define PBLOCK_REF	0
 
-class SampleKFCtrl : public Control {
-	public:
+SampleKFCtrl::SampleKFCtrl()
+{
+	// Create default X & Y controllers.  These classes are
+	// implementations of the Control class that generate float values.
+	mpXCtrl = NULL;
+	mpYCtrl = NULL;
 
-		// Parameter block
-		IParamBlock2	*pblock;	//ref 0
+	ReplaceReference(kXCtrlRef, NewDefaultFloatController());
+	ReplaceReference(kYCtrlRef, NewDefaultFloatController());
 
-		// Loading/Saving
-		IOResult Load(ILoad *iload) {return IO_OK;}
-		IOResult Save(ISave *isave) {return IO_OK;}
+}
 
-		//From Animatable
-		Class_ID ClassID() {return SampleKFCtrl_CLASS_ID;}		
-		SClass_ID SuperClassID() { return CTRL_POSITION_CLASS_ID; }
-		void GetClassName(TSTR& s) {s = GetString(IDS_CLASS_NAME);}
+void SampleKFCtrl::SetReference(int i, ReferenceTarget* pTarget)
+{
+	switch (i)
+	{
+	case kXCtrlRef: mpXCtrl = (Control*)pTarget; break;
+	case kYCtrlRef: mpYCtrl = (Control*)pTarget; break;
+	}
+}
 
-		RefTargetHandle Clone( RemapDir &remap );
-		RefResult NotifyRefChanged(const Interval& changeInt, RefTargetHandle hTarget, 
-			PartID& partID, RefMessage message, BOOL propagate);
+ReferenceTarget* SampleKFCtrl::GetReference(int i)
+{
+	switch (i)
+	{
+	case kXCtrlRef: return mpXCtrl;
+	case kYCtrlRef: return mpYCtrl;
+	}
+	return NULL;
+}
+
+RefResult SampleKFCtrl::NotifyRefChanged(const Interval& /*changeInt*/, RefTargetHandle /*hTarget*/, PartID& /*partID*/, RefMessage /*message*/, BOOL /*propagate*/)
+{
+	return REF_DONTCARE;
+}
+
+void SampleKFCtrl::Copy(Control* pFrom)
+{
+	// If the object we are about to control has been previously been
+	// controlled by another controller, we get a chance to copy its
+	// given key frames here. We might want to at least copy the 
+	// position of the object at the time zero, so the object does not 
+	// suddenly appear in a random coordination in the view port when
+	// the animation starts.  
+	// NOTE - remember, never assign directly to the pointer:
+	// Control* pNewX = pFrom->GetXController();
+	// Likewise for the Y controller:
+	// Control* pNewY = pFrom->GetYController();
+
+	//mpXCtrl = pFrom->GetXController();
+	//mpYCtrl = pFrom->GetYController();
+
+}
+
+void SampleKFCtrl::GetValue(TimeValue t, void* ptr, Interval& valid, GetSetMethod method)
+{
+	//We read the values for our X & Y component from our referenced float controllers
+	Point3 p3OurAbsValue(0, 0, 0);
+	mpXCtrl->GetValue(t, &p3OurAbsValue.x, valid, CTRL_ABSOLUTE);
+	mpYCtrl->GetValue(t, &p3OurAbsValue.y, valid, CTRL_ABSOLUTE);
+
+	if (method == CTRL_ABSOLUTE)
+	{
+		Point3* p3InVal = (Point3*)ptr;
+		*p3InVal = p3OurAbsValue;
+	}
+	else // CTRL_RELATIVE
+	{
+		Matrix3* m3InVal = (Matrix3*)ptr;
+		m3InVal->PreTranslate(p3OurAbsValue);
+	}
+}
 
 
-		int NumSubs() { return 1; }
-		TSTR SubAnimName(int i) { return GetString(IDS_PARAMS); }				
-		Animatable* SubAnim(int i) { return pblock; }
+void SampleKFCtrl::SetValue(TimeValue t, void* ptr, int commit, GetSetMethod method)
+{
+	// We set the requested values on our referenced X & Y float controllers.
+	// Max is trying to tell us what our value should be.  In turn, we need
+	// to tell our subanims (our X & Y controllers) what their value should be.
+	Point3* p3Val = (Point3*)ptr;
+	mpXCtrl->SetValue(t, &p3Val->x, commit, CTRL_ABSOLUTE);
+	mpYCtrl->SetValue(t, &p3Val->y, commit, CTRL_ABSOLUTE);
+}
 
-		// TODO: Maintain the number or references here
-		int NumRefs() { return 1; }
-		RefTargetHandle GetReference(int i) { return pblock; }
-		void SetReference(int i, RefTargetHandle rtarg) { pblock=(IParamBlock2*)rtarg; }
+int SampleKFCtrl::NumSubs() {
+	return 2;
+}
 
-		int	NumParamBlocks() { return 1; }					// return number of ParamBlocks in this instance
-		IParamBlock2* GetParamBlock(int i) { return pblock; } // return i'th ParamBlock
-		IParamBlock2* GetParamBlockByID(BlockID id) { return (pblock->ID() == id) ? pblock : NULL; } // return id'd ParamBlock
+Animatable* SampleKFCtrl::SubAnim(int i) {
 
-		void DeleteThis() { delete this; }		
-		
-		//Constructor/Destructor
-		SampleKFCtrl() {}
-		~SampleKFCtrl() {}
+	switch (i)
+	{
+	case kXCtrlRef: return mpXCtrl;
+	case kYCtrlRef: return mpYCtrl;
+	}
+	return NULL;
 
-};
+}
+
+TSTR SampleKFCtrl::SubAnimName(int i)
+{
+	switch (i)
+	{
+	case kXCtrlRef: return _T("X Pos.");
+	case kYCtrlRef: return _T("Y Pos.");
+	}
+	return _T("Unknown!");
+}
 
 
-
-class SampleKFCtrlClassDesc : public ClassDesc2 
+class SampleKFCtrlClassDesc : public ClassDesc2
 {
 public:
-	virtual int           IsPublic() override                       { return TRUE; }
-	virtual void*         Create(BOOL /*loading = FALSE*/) override { return new SampleKFCtrl(); }
-	virtual const TCHAR * ClassName() override                      { return GetString(IDS_CLASS_NAME); }
-	virtual SClass_ID     SuperClassID() override                   { return CTRL_POSITION_CLASS_ID; }
-	virtual Class_ID      ClassID() override                        { return SampleKFCtrl_CLASS_ID; }
-	virtual const TCHAR*  Category() override                       { return GetString(IDS_CATEGORY); }
+	SampleKFCtrlClassDesc() {};
+	~SampleKFCtrlClassDesc() {};
 
-	virtual const TCHAR*  InternalName() override                   { return _T("SampleKFCtrl"); } // Returns fixed parsable name (scripter-visible name)
-	virtual HINSTANCE     HInstance() override                      { return hInstance; } // Returns owning module handle
+	// ClassDesc methods.  
+	// Max calls these functions to figure out what kind of plugin this class represents
 
+	// Return TRUE if the user can create this plug-in.
+	int			IsPublic() { return TRUE; }	// We do want the user to see this plug-in
 
+	// Return the class name of this plug-in
+	const MCHAR* ClassName() { static const MSTR str(_T("ejemplo4b")); return str; }
+
+	// Return the SuperClassID - this ID should
+	// match the implementation of the interface returned
+	// by Create.
+	SClass_ID	SuperClassID() { return CTRL_POSITION_CLASS_ID; }
+
+	// Return the unique ID that identifies this class
+	// This is required when saving.  Max stores the ClassID
+	// reported by the actual plugin, and on reload it recreates
+	// the appropriate class by matching the stored ClassID with
+	// the matching ClassDesc
+	//
+	// You can generate random ClassID's using the gencid program
+	// supplied with the Max SDK
+	Class_ID	ClassID() { return SampleKFCtrl_CLASS_ID; }
+
+	// If the plugin is an Object or Texture, this function returns
+	// the category it can be assigned to.
+	const MCHAR* Category() { static const MSTR str(_T("ejemplo4b")); return str; }
+
+	// Return an instance of this plug-in.  Max will call this function
+	// when it wants to start using our plug-in
+	void* Create(BOOL loading = FALSE)
+	{
+		return new SampleKFCtrl;
+	}
 };
 
 ClassDesc2* GetSampleKFCtrlDesc()

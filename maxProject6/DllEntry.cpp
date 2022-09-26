@@ -27,7 +27,7 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL,ULONG fdwReason,LPVOID /*lpvReserved*/)
 {
 	if (fdwReason == DLL_PROCESS_ATTACH)
 	{
-		MaxSDK::Util::UseLanguagePackLocale();
+		//MaxSDK::Util::UseLanguagePackLocale();
 		// Hang on to this DLL's instance handle.
 		hInstance = hinstDLL;
 		DisableThreadLibraryCalls(hInstance);
