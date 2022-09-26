@@ -1,0 +1,9 @@
+﻿  maxProject3.cpp
+c:\users\umbra-pc01\desktop\ejemplo3dsmax\maxproject3\maxproject3.cpp(109): warning C4100: 't': unreferenced formal parameter
+c:\users\umbra-pc01\desktop\ejemplo3dsmax\maxproject3\maxproject3.cpp(135): warning C4100: 'iu': unreferenced formal parameter
+  c:\users\umbra-pc01\desktop\ejemplo3dsmax\maxproject3\maxproject3.cpp(176): TODO: React to the user interface commands.  A utility plug-in is controlled by the user from here.
+  LINK : C:\Program Files\Autodesk\3ds Max 2021\Plugins\maxProject3.dlu not found or not built by the last incremental link; performing full link
+     Creating library C:\Users\Umbra-PC01\Desktop\Ejemplo3dsmax\maxProject3\\obj\x64\Hybrid\\maxProject3.lib and object C:\Users\Umbra-PC01\Desktop\Ejemplo3dsmax\maxProject3\\obj\x64\Hybrid\\maxProject3.exp
+  maxProject3.vcxproj -> C:\Program Files\Autodesk\3ds Max 2021\Plugins\maxProject3.dlu
+  C:\Users\Umbra-PC01\Desktop\Ejemplo3dsmax\maxProject3\obj\x64\Hybrid\maxProject3.dlu.muiLanguage neutral file successfully created at "C:\Users\Umbra-PC01\Desktop\Ejemplo3dsmax\maxProject3\obj\x64\Hybrid\maxProject3.dlu.ln".
+  MUI file successfully created at "C:\Users\Umbra-PC01\Desktop\Ejemplo3dsmax\maxProject3\obj\x64\Hybrid\maxProject3.dlu.mui".

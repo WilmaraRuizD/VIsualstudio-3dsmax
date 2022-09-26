@@ -1,0 +1,15 @@
+﻿  maxProject2.cpp
+c:\users\umbra-pc01\desktop\ejemplo3dsmax\maxproject2\maxproject2.h(27): warning C4100: 'pTarget': unreferenced formal parameter
+c:\users\umbra-pc01\desktop\ejemplo3dsmax\maxproject2\maxproject2.h(27): warning C4100: 'i': unreferenced formal parameter
+c:\users\umbra-pc01\desktop\ejemplo3dsmax\maxproject2\maxproject2.h(28): warning C4100: 'i': unreferenced formal parameter
+c:\users\umbra-pc01\desktop\ejemplo3dsmax\maxproject2\maxproject2.h(31): warning C4100: 'pFrom': unreferenced formal parameter
+c:\users\umbra-pc01\desktop\ejemplo3dsmax\maxproject2\maxproject2.cpp(32): warning C4100: 'method': unreferenced formal parameter
+c:\users\umbra-pc01\desktop\ejemplo3dsmax\maxproject2\maxproject2.cpp(32): warning C4100: 'commit': unreferenced formal parameter
+c:\users\umbra-pc01\desktop\ejemplo3dsmax\maxproject2\maxproject2.cpp(32): warning C4100: 'ptr': unreferenced formal parameter
+c:\users\umbra-pc01\desktop\ejemplo3dsmax\maxproject2\maxproject2.cpp(32): warning C4100: 't': unreferenced formal parameter
+c:\users\umbra-pc01\desktop\ejemplo3dsmax\maxproject2\maxproject2.cpp(72): warning C4100: 'loading': unreferenced formal parameter
+  LINK : C:\Program Files\Autodesk\3ds Max 2021\Plugins\maxProject2.dlc not found or not built by the last incremental link; performing full link
+     Creating library C:\Users\Umbra-PC01\Desktop\Ejemplo3dsmax\maxProject2\\obj\x64\Hybrid\\maxProject2.lib and object C:\Users\Umbra-PC01\Desktop\Ejemplo3dsmax\maxProject2\\obj\x64\Hybrid\\maxProject2.exp
+  maxProject2.vcxproj -> C:\Program Files\Autodesk\3ds Max 2021\Plugins\maxProject2.dlc
+  C:\Users\Umbra-PC01\Desktop\Ejemplo3dsmax\maxProject2\obj\x64\Hybrid\maxProject2.dlc.muiLanguage neutral file successfully created at "C:\Users\Umbra-PC01\Desktop\Ejemplo3dsmax\maxProject2\obj\x64\Hybrid\maxProject2.dlc.ln".
+  MUI file successfully created at "C:\Users\Umbra-PC01\Desktop\Ejemplo3dsmax\maxProject2\obj\x64\Hybrid\maxProject2.dlc.mui".

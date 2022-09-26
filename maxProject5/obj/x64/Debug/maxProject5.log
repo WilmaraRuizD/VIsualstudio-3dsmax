@@ -1,0 +1,8 @@
+﻿  maxProject5.cpp
+  DllEntry.cpp
+  c:\users\umbra-pc01\desktop\ejemplo3dsmax\maxproject5\dllentry.cpp(78): TODO: Perform initialization here.
+  c:\users\umbra-pc01\desktop\ejemplo3dsmax\maxproject5\dllentry.cpp(87): TODO: Perform un-initialization here.
+c:\users\umbra-pc01\desktop\ejemplo3dsmax\maxproject5\maxproject5.cpp(81): error C2365: 'samplegobject2_params': redefinition; previous definition was 'enumerator'
+  c:\users\umbra-pc01\desktop\ejemplo3dsmax\maxproject5\maxproject5.h(34): note: see declaration of 'samplegobject2_params'
+c:\users\umbra-pc01\desktop\ejemplo3dsmax\maxproject5\maxproject5.cpp(86): error C2365: 'pb_spin': redefinition; previous definition was 'enumerator'
+  c:\users\umbra-pc01\desktop\ejemplo3dsmax\maxproject5\maxproject5.h(39): note: see declaration of 'pb_spin'

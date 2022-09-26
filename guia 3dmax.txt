@@ -1,0 +1,47 @@
+//sensible a mayusculas 
+interfaces definidas en la clase maxProject5::BeginEditParams
+
+interface = interfaces   
+IUTIL = interfaces de usuario
+
+ejemplo1 
+
+clase maxProject5::BeginEditParams
+
+interface maxint
+IUtil maxui
+
+//igualda de variables 
+this->maxui =maxui
+
+//cambia la variable de interfaces definida como ip por maxint
+
+hPanel=maxint->AddRollupPage
+
+//importante definir las variables al principio del programa cuando se cambian las de por defecto 
+
+//ejemplo 2
+
+El gráfico de escena y los nodos
+
+//funciones para definir objetos 
+
+INode::IsRootNode() : determina si un nodo es el nodo raíz (no tiene un nodo principal).
+INode::GetParentNode() - devuelve el nodo padre de un hijo.
+INode::NumberOfChildren() - obtiene el número de hijos del nodo.
+INode::GetChildNode() - devuelve un puntero INode al enésimo hijo.
+INode::GetName() - devuelve el nombre del objeto de escena de este nodo.
+INode::GetObjectRef() - devuelve un puntero al objeto de escena del nodo.
+INode::GetNodeTM() - devuelve el PRS del objeto de escena del nodo en el momento dado.
+
+
+
+Severity	Code	Description	Project	File	Line	Suppression State
+Error	MSB4019	The imported project "C:\Program Files\Autodesk\3ds Max 2020 SDK\maxsdk\ProjectSettings\PropertySheets\3dsmax.general.project.settings.props" was not found. Confirm that the expression in the Import declaration "C:\Program Files\Autodesk\3ds Max 2020 SDK\maxsdk\ProjectSettings\PropertySheets\3dsmax.general.project.settings.props" is correct, and that the file exists on disk.	Lesson3	C:\Users\Umbra-PC01\Desktop\3ds-max-sdk\3dsMax-Learning-Path\Lesson3\Lesson3.vcxproj	35	
+
+
+Severity	Code	Description	Project	File	Line	Suppression State
+Error	D8003	missing source filename	Lesson2	C:\Users\Umbra-PC01\Desktop\3ds-max-sdk\3dsMax-Learning-Path\Lesson2\cl	1	
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+El sdk contiene clases abstractas de c++ la cuales viene integradas en el sdk  como complementos se pueden aceder a ellas y se pueden modificar, las clases estan categorizadas y se encuentran en la documentacion 
+overview 3 ds max sdk, los complementos estan empaquetados en DLl que es la biblioteca de carga. que es una biblioteca de carga dinamica y tiene bibliotecas especificas para guardarlas 

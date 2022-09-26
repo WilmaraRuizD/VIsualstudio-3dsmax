@@ -1,0 +1,17 @@
+﻿  sceneGraph.cpp
+  DllEntry.cpp
+c:\users\umbra-pc01\desktop\ejemplo3dsmax\scenegraph\scenegraph.cpp(108): warning C4100: 'n': unreferenced formal parameter
+  c:\users\umbra-pc01\desktop\ejemplo3dsmax\scenegraph\scenegraph.cpp(116): TODO: Return long ASCII description (i.e. "Targa 2.0 Image File")
+  c:\users\umbra-pc01\desktop\ejemplo3dsmax\scenegraph\dllentry.cpp(78): TODO: Perform initialization here.
+  c:\users\umbra-pc01\desktop\ejemplo3dsmax\scenegraph\scenegraph.cpp(152): TODO: Return Version number * 100 (i.e. v3.01 = 301)
+  c:\users\umbra-pc01\desktop\ejemplo3dsmax\scenegraph\dllentry.cpp(87): TODO: Perform un-initialization here.
+  c:\users\umbra-pc01\desktop\ejemplo3dsmax\scenegraph\scenegraph.cpp(163): TODO: Decide which options to support.  Simply return true for each option supported by each Extension the exporter supports.
+c:\users\umbra-pc01\desktop\ejemplo3dsmax\scenegraph\scenegraph.cpp(161): warning C4100: 'options': unreferenced formal parameter
+c:\users\umbra-pc01\desktop\ejemplo3dsmax\scenegraph\scenegraph.cpp(161): warning C4100: 'ext': unreferenced formal parameter
+c:\users\umbra-pc01\desktop\ejemplo3dsmax\scenegraph\scenegraph.cpp(168): warning C4100: 'options': unreferenced formal parameter
+c:\users\umbra-pc01\desktop\ejemplo3dsmax\scenegraph\scenegraph.cpp(168): warning C4100: 'suppressPrompts': unreferenced formal parameter
+c:\users\umbra-pc01\desktop\ejemplo3dsmax\scenegraph\scenegraph.cpp(168): warning C4100: 'ei': unreferenced formal parameter
+     Creating library C:\Users\Umbra-PC01\Desktop\Ejemplo3dsmax\sceneGraph\\obj\x64\Hybrid\\sceneGraph.lib and object C:\Users\Umbra-PC01\Desktop\Ejemplo3dsmax\sceneGraph\\obj\x64\Hybrid\\sceneGraph.exp
+  sceneGraph.vcxproj -> C:\Program Files\Autodesk\3ds Max 2021\Plugins\sceneGraph.dle
+  C:\Users\Umbra-PC01\Desktop\Ejemplo3dsmax\sceneGraph\obj\x64\Hybrid\sceneGraph.dle.muiLanguage neutral file successfully created at "C:\Users\Umbra-PC01\Desktop\Ejemplo3dsmax\sceneGraph\obj\x64\Hybrid\sceneGraph.dle.ln".
+  MUI file successfully created at "C:\Users\Umbra-PC01\Desktop\Ejemplo3dsmax\sceneGraph\obj\x64\Hybrid\sceneGraph.dle.mui".

@@ -1,0 +1,2 @@
+﻿  IMXSExposure.cpp
+LINK : fatal error LNK1104: cannot open file 'C:\Program Files\Autodesk\3ds Max 2021\Plugins\MXSExposure.gup'

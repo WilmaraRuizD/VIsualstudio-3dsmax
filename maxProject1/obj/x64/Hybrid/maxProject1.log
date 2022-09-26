@@ -1,0 +1,7 @@
+﻿  maxProject1.cpp
+  c:\users\umbra-pc01\desktop\ejemplo3dsmax\maxproject1\maxproject1.cpp(132): TODO: React to the user interface commands.  A utility plug-in is controlled by the user from here.
+  LINK : C:\Program Files\Autodesk\3ds Max 2021\Plugins\maxProject1.dlu not found or not built by the last incremental link; performing full link
+     Creating library C:\Users\Umbra-PC01\Desktop\Ejemplo3dsmax\maxProject1\\obj\x64\Hybrid\\maxProject1.lib and object C:\Users\Umbra-PC01\Desktop\Ejemplo3dsmax\maxProject1\\obj\x64\Hybrid\\maxProject1.exp
+  maxProject1.vcxproj -> C:\Program Files\Autodesk\3ds Max 2021\Plugins\maxProject1.dlu
+  C:\Users\Umbra-PC01\Desktop\Ejemplo3dsmax\maxProject1\obj\x64\Hybrid\maxProject1.dlu.muiLanguage neutral file successfully created at "C:\Users\Umbra-PC01\Desktop\Ejemplo3dsmax\maxProject1\obj\x64\Hybrid\maxProject1.dlu.ln".
+  MUI file successfully created at "C:\Users\Umbra-PC01\Desktop\Ejemplo3dsmax\maxProject1\obj\x64\Hybrid\maxProject1.dlu.mui".
